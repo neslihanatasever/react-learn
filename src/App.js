@@ -14,6 +14,8 @@ import './App.css';
 // }
 
 
+//Displaying Data -----------------------------------------
+
 const user = {
   name: 'Neslihan Atasever',
   imageUrl: 'https://avatars.githubusercontent.com/u/75980632?v=4',
@@ -39,4 +41,33 @@ export default function Profile() {
   );
 }
 
+//Conditional Rendering ----------------------------------------
+
+// let content;
+// if (isLoggedIn) {
+//   content = <AdminPanel />;
+// } else {
+//   content = <LoginForm />
+// }
+// return (
+//   <div>
+//     {content}
+//   </div>
+// );
+
+/* <div>
+  {isLoggedIn ? (
+    <AdminPanel />
+  ) : (
+    <LoginForm />
+  )}
+</div> 
+
+<div>
+    {isLoggidIn && <AdminPanel />}
+</div>
+*/
+
+
+//Rendering Lists -----------------------------------
 
