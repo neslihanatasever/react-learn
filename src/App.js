@@ -126,16 +126,6 @@ import { useState } from 'react';
 //Updating the Screen -------------------------
 
 export default function MyApp() {
-  return (
-    <div>
-      <h1>Counters that update seperately</h1>
-      <MyButton />
-      <MyButton />
-    </div>
-  );
-}
-
- function MyButton() {
   const [count, setCount] = useState(0);
 
   function handleClick() {
@@ -143,7 +133,17 @@ export default function MyApp() {
   } 
 
   return (
-    <button onClick={handleClick}>
+    <div>
+      <h1>Counters that update seperately</h1>
+      <MyButton count= {count} onClick={handleClick} />
+      <MyButton count= {count} onClick={handleClick} />
+    </div>
+  );
+}
+
+ function MyButton({count, onClick}) {
+  return (
+    <button onClick={onClick}>
       Clicked {count} times
     </button>
   );
