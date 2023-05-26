@@ -1,7 +1,9 @@
 // import { SayHello } from './components/sayHello/sayHello'
 // import { AboutPage } from './components/about/aboutPage'
 // import './components/about/aboutPage.css';
-import './App.css';
+// import './App.css';
+
+import { useState } from 'react';
 
 
 // function App() {
@@ -108,16 +110,42 @@ import './App.css';
 
 //Responding to Events --------------------------------------
 
-function MyButton() {
-  function handleClick(){
-    alert('you clicked me!');
-  }
+// function MyButton() {
+//   function handleClick(){
+//     alert('you clicked me!');
+//   }
+
+//   return (
+//     <button onClick={handleClick}>
+//       Click me
+//     </button>
+//   );
+// }
+
+
+//Updating the Screen -------------------------
+
+export default function MyApp() {
+  return (
+    <div>
+      <h1>Counters that update seperately</h1>
+      <MyButton />
+      <MyButton />
+    </div>
+  );
+}
+
+ function MyButton() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  } 
 
   return (
     <button onClick={handleClick}>
-      Click me
+      Clicked {count} times
     </button>
   );
 }
 
-export default MyButton();
